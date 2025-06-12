@@ -4,9 +4,746 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Penguin - AI & Technology Consulting</title>
-    <link rel="stylesheet" href="styles.css">
     <meta name="description" content="Blue Penguin delivers strategic AI consulting and implementation services that drive measurable business transformation.">
     <meta name="keywords" content="AI consulting, artificial intelligence, technology consulting, business transformation, AI strategy">
+    <style>
+        /* Import Professional Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        /* CSS Custom Properties - Soft Blue/Green Theme */
+        :root {
+          /* Primary Colors - Soft Blue/Green Palette */
+          --primary-blue: #3b82f6;
+          --primary-green: #10b981;
+          --primary-teal: #14b8a6;
+          --primary-cyan: #06b6d4;
+          
+          /* Soft Variations */
+          --soft-blue: #60a5fa;
+          --soft-green: #34d399;
+          --soft-teal: #5eead4;
+          --soft-cyan: #67e8f9;
+          
+          /* Darker Variations */
+          --dark-blue: #1e40af;
+          --dark-green: #047857;
+          --dark-teal: #0f766e;
+          
+          /* Gradient Combinations */
+          --gradient-primary: linear-gradient(135deg, var(--soft-blue) 0%, var(--soft-teal) 50%, var(--soft-green) 100%);
+          --gradient-secondary: linear-gradient(135deg, var(--primary-cyan) 0%, var(--primary-teal) 100%);
+          --gradient-accent: linear-gradient(135deg, var(--soft-cyan) 0%, var(--soft-blue) 100%);
+          
+          /* Neutral Colors */
+          --gray-50: #f8fafc;
+          --gray-100: #f1f5f9;
+          --gray-200: #e2e8f0;
+          --gray-300: #cbd5e1;
+          --gray-400: #94a3b8;
+          --gray-500: #64748b;
+          --gray-600: #475569;
+          --gray-700: #334155;
+          --gray-800: #1e293b;
+          --gray-900: #0f172a;
+          
+          /* Typography */
+          --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          
+          /* Spacing */
+          --section-padding: 5rem 0;
+          --container-padding: 0 1.5rem;
+          
+          /* Shadows */
+          --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          
+          /* Border Radius */
+          --radius-sm: 0.375rem;
+          --radius-md: 0.5rem;
+          --radius-lg: 0.75rem;
+          --radius-xl: 1rem;
+          --radius-2xl: 1.5rem;
+          
+          /* Transitions */
+          --transition-fast: 150ms ease-in-out;
+          --transition-normal: 300ms ease-in-out;
+          --transition-slow: 500ms ease-in-out;
+        }
+
+        /* Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: var(--font-primary);
+          line-height: 1.6;
+          color: var(--gray-700);
+          background-color: var(--gray-50);
+          font-weight: 400;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+          font-family: var(--font-heading);
+          font-weight: 600;
+          line-height: 1.2;
+          color: var(--gray-900);
+          margin-bottom: 1rem;
+        }
+
+        h1 {
+          font-size: 3.5rem;
+          font-weight: 700;
+          letter-spacing: -0.025em;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 600;
+        }
+
+        h3 {
+          font-size: 1.875rem;
+          font-weight: 600;
+        }
+
+        h4 {
+          font-size: 1.25rem;
+          font-weight: 500;
+        }
+
+        p {
+          margin-bottom: 1rem;
+          color: var(--gray-600);
+        }
+
+        .text-xl {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+
+        .text-lg {
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+        }
+
+        /* Container */
+        .container {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: var(--container-padding);
+        }
+
+        /* Buttons */
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+          font-weight: 500;
+          border-radius: var(--radius-lg);
+          text-decoration: none;
+          transition: all var(--transition-normal);
+          cursor: pointer;
+          border: none;
+          font-family: var(--font-primary);
+        }
+
+        .btn-primary {
+          background: var(--gradient-primary);
+          color: white;
+          box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+          background: rgba(255, 255, 255, 0.2);
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Navigation */
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid var(--gray-200);
+          transition: all var(--transition-normal);
+        }
+
+        .nav-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 0;
+        }
+
+        .nav-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          text-decoration: none;
+          color: var(--gray-900);
+        }
+
+        .nav-logo-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          background: var(--gradient-primary);
+          border-radius: var(--radius-lg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.25rem;
+          overflow: hidden;
+        }
+
+        .nav-logo-icon img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: var(--radius-lg);
+        }
+
+        .nav-logo-text {
+          font-size: 1.25rem;
+          font-weight: 700;
+          font-family: var(--font-heading);
+        }
+
+        .nav-menu {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          list-style: none;
+        }
+
+        .nav-link {
+          color: var(--gray-600);
+          text-decoration: none;
+          font-weight: 500;
+          transition: color var(--transition-fast);
+          position: relative;
+        }
+
+        .nav-link:hover {
+          color: var(--primary-teal);
+        }
+
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--gradient-primary);
+          transition: width var(--transition-normal);
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+          position: relative;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          background: var(--gradient-primary);
+          overflow: hidden;
+          padding-top: 80px;
+        }
+
+        .hero::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: 
+            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+          pointer-events: none;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 10;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: center;
+        }
+
+        .hero-text {
+          color: white;
+        }
+
+        .hero-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          line-height: 1.1;
+          margin-bottom: 1.5rem;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title-highlight {
+          background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .hero-description {
+          font-size: 1.25rem;
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: 2rem;
+          line-height: 1.7;
+        }
+
+        .hero-buttons {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+
+        .hero-visual {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .hero-card {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-2xl);
+          padding: 2rem;
+          min-width: 300px;
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-features {
+          list-style: none;
+        }
+
+        .hero-feature {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          color: white;
+          margin-bottom: 1rem;
+        }
+
+        .hero-feature-dot {
+          width: 0.75rem;
+          height: 0.75rem;
+          border-radius: 50%;
+          animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero-feature-dot.green { background-color: #10b981; }
+        .hero-feature-dot.yellow { background-color: #f59e0b; animation-delay: 0.5s; }
+        .hero-feature-dot.blue { background-color: #3b82f6; animation-delay: 1s; }
+
+        /* Animations */
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+
+        /* Services Section */
+        .services {
+          padding: 5rem 0;
+          background: white;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+
+        .section-title {
+          margin-bottom: 1rem;
+        }
+
+        .section-description {
+          font-size: 1.25rem;
+          color: var(--gray-600);
+          max-width: 48rem;
+          margin: 0 auto;
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+        }
+
+        .service-card {
+          background: white;
+          border-radius: var(--radius-2xl);
+          padding: 2rem;
+          border: 1px solid var(--gray-200);
+          transition: all var(--transition-normal);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .service-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-2xl);
+          border-color: transparent;
+        }
+
+        .service-icon {
+          width: 4rem;
+          height: 4rem;
+          border-radius: var(--radius-xl);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .service-icon.blue { background: var(--gradient-accent); }
+        .service-icon.green { background: var(--gradient-secondary); }
+        .service-icon.teal { background: var(--gradient-primary); }
+
+        .service-icon svg {
+          width: 2rem;
+          height: 2rem;
+          color: white;
+        }
+
+        .service-title {
+          position: relative;
+          z-index: 10;
+          margin-bottom: 1rem;
+        }
+
+        .service-description {
+          position: relative;
+          z-index: 10;
+          margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+          list-style: none;
+          margin-bottom: 1.5rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .service-feature {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 0.75rem;
+          font-size: 0.875rem;
+          color: var(--gray-700);
+        }
+
+        .service-feature-dot {
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+        }
+
+        .service-feature-dot.blue { background-color: var(--primary-blue); }
+        .service-feature-dot.green { background-color: var(--primary-green); }
+        .service-feature-dot.teal { background-color: var(--primary-teal); }
+
+        .service-pricing {
+          position: relative;
+          z-index: 10;
+        }
+
+        .service-price {
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+        }
+
+        .service-price.blue { color: var(--primary-blue); }
+        .service-price.green { color: var(--primary-green); }
+        .service-price.teal { color: var(--primary-teal); }
+
+        .service-duration {
+          font-size: 0.875rem;
+          color: var(--gray-500);
+        }
+
+        /* Approach Section */
+        .approach {
+          padding: 5rem 0;
+          background: var(--gray-50);
+        }
+
+        .approach-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+        }
+
+        .approach-step {
+          text-align: center;
+        }
+
+        .approach-number {
+          width: 5rem;
+          height: 5rem;
+          border-radius: var(--radius-2xl);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1.5rem;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: white;
+        }
+
+        .approach-number.step1 { background: var(--gradient-accent); }
+        .approach-number.step2 { background: var(--gradient-primary); }
+        .approach-number.step3 { background: var(--gradient-secondary); }
+
+        /* CTA Section */
+        .cta {
+          padding: 5rem 0;
+          background: var(--gradient-primary);
+          text-align: center;
+          color: white;
+        }
+
+        .cta-title {
+          color: white;
+          margin-bottom: 1.5rem;
+        }
+
+        .cta-description {
+          font-size: 1.25rem;
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: 2rem;
+          max-width: 48rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+          background: var(--gray-900);
+          color: white;
+          padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr;
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 1rem;
+        }
+
+        .footer-logo-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          background: var(--gradient-primary);
+          border-radius: var(--radius-lg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.25rem;
+          overflow: hidden;
+        }
+
+        .footer-logo-icon img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: var(--radius-lg);
+        }
+
+        .footer-description {
+          color: var(--gray-400);
+          margin-bottom: 1.5rem;
+          max-width: 24rem;
+        }
+
+        .footer-contact {
+          color: var(--gray-400);
+        }
+
+        .footer-section h4 {
+          color: white;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+
+        .footer-links {
+          list-style: none;
+        }
+
+        .footer-links li {
+          margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+          color: var(--gray-400);
+          text-decoration: none;
+          transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+          color: var(--soft-teal);
+        }
+
+        .footer-bottom {
+          border-top: 1px solid var(--gray-800);
+          padding-top: 2rem;
+          text-align: center;
+          color: var(--gray-400);
+        }
+
+        /* Image Placeholders */
+        .img-placeholder {
+          background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--gray-500);
+          font-weight: 500;
+          border-radius: var(--radius-lg);
+          border: 2px dashed var(--gray-400);
+        }
+
+        .img-placeholder.hero {
+          width: 100%;
+          height: 300px;
+          font-size: 1.125rem;
+        }
+
+        .img-placeholder.feature {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+          
+          .hero-title {
+            font-size: 3rem;
+          }
+          
+          .footer-content {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        @media (max-width: 768px) {
+          :root {
+            --container-padding: 0 1rem;
+          }
+          
+          .nav-menu {
+            display: none;
+          }
+          
+          .hero-title {
+            font-size: 2.5rem;
+          }
+          
+          .hero-buttons {
+            justify-content: center;
+          }
+          
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .approach-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .footer-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+          
+          .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 2rem;
+          }
+          
+          .hero-description {
+            font-size: 1rem;
+          }
+          
+          .btn {
+            width: 100%;
+            max-width: 280px;
+          }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -15,6 +752,8 @@
             <div class="nav-container">
                 <a href="#" class="nav-logo">
                     <div class="nav-logo-icon">
+                        <!-- To replace with your logo image, use: -->
+                        <!-- <img src="your-logo.png" alt="Blue Penguin Logo"> -->
                         <div class="img-placeholder feature">Logo</div>
                     </div>
                     <span class="nav-logo-text">Blue Penguin</span>
@@ -67,278 +806,57 @@
                 </div>
             </div>
         </div>
-    </section> class="relative pt-20 pb-16 gradient-bg bg-pattern overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh] py-16">
-                <div class="text-white">
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-shadow leading-tight">
-                        Transform Your Business with 
-                        <span class="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
-                            Intelligent AI Solutions
-                        </span>
-                    </h1>
-                    <p class="text-xl mb-8 text-blue-100 leading-relaxed">
-                        Blue Penguin delivers strategic AI consulting and implementation services that drive measurable business transformation. From assessment to deployment, we're your trusted partner in the AI revolution.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
-                            Start Your AI Journey
-                        </button>
-                        <button class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/30">
-                            View Our Approach
-                        </button>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="animate-float">
-                        <div class="w-96 h-96 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full blur-3xl absolute -top-20 -right-20"></div>
-                        <div class="glass-effect rounded-2xl p-8 backdrop-blur-xl">
-                            <div class="space-y-4">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                                    <span class="text-white">AI Strategy Development</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.5s"></div>
-                                    <span class="text-white">Implementation & Integration</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style="animation-delay: 1s"></div>
-                                    <span class="text-white">Business Transformation</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our AI Consulting Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our AI Consulting Services</h2>
+                <p class="section-description">
                     We offer comprehensive AI solutions tailored to your business needs and transformation goals
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="services-grid">
                 <!-- AI Assessment -->
-                <div class="card-hover bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
-                    <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="service-card">
+                    <div class="service-icon blue">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Strategy & Assessment</h3>
-                    <p class="text-gray-600 mb-6">Comprehensive evaluation of your AI readiness, strategic planning, and roadmap development for successful AI adoption.</p>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                            AI Maturity Assessment
+                    <h3 class="service-title">AI Strategy & Assessment</h3>
+                    <p class="service-description">Comprehensive evaluation of your AI readiness, strategic planning, and roadmap development for successful AI adoption.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <span class="service-feature-dot blue"></span>
+                            <span>AI Maturity Assessment</span>
                         </div>
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                            Strategic Roadmap
+                        <div class="service-feature">
+                            <span class="service-feature-dot blue"></span>
+                            <span>Strategic Roadmap</span>
                         </div>
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
-                            ROI Projections
+                        <div class="service-feature">
+                            <span class="service-feature-dot blue"></span>
+                            <span>ROI Projections</span>
                         </div>
                     </div>
-                    <div class="text-2xl font-bold text-blue-600 mb-2">$15K - $25K</div>
-                    <div class="text-sm text-gray-500">4-6 weeks delivery</div>
+                    <div class="service-pricing">
+                        <div class="service-price blue">$5K - $15K</div>
+                        <div class="service-duration">4-6 weeks delivery</div>
+                    </div>
                 </div>
 
                 <!-- AI Implementation -->
-                <div class="card-hover bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-100">
-                    <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="service-card">
+                    <div class="service-icon teal">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Implementation</h3>
-                    <p class="text-gray-600 mb-6">End-to-end AI solution deployment with integration, training, and optimization for immediate business impact.</p>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                            Custom AI Solutions
-                        </div>
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                            System Integration
-                        </div>
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                            Staff Training
-                        </div>
-                    </div>
-                    <div class="text-2xl font-bold text-purple-600 mb-2">$50K - $150K</div>
-                    <div class="text-sm text-gray-500">3-6 months delivery</div>
-                </div>
-
-                <!-- AI Transformation -->
-                <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-100">
-                    <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI Transformation</h3>
-                    <p class="text-gray-600 mb-6">Complete business model transformation with enterprise-grade AI platforms and ongoing innovation support.</p>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                            Business Model Innovation
-                        </div>
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                            Enterprise AI Platforms
-                        </div>
-                        <div class="flex items-center text-sm text-gray-700">
-                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                            Ongoing Support
-                        </div>
-                    </div>
-                    <div class="text-2xl font-bold text-green-600 mb-2">$200K+</div>
-                    <div class="text-sm text-gray-500">6-12 months delivery</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Approach Section -->
-    <section id="approach" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Proven Approach</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    The Blue Penguin methodology combines strategic thinking with hands-on implementation
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-2xl font-bold">1</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Assess & Strategize</h3>
-                    <p class="text-gray-600">
-                        Deep-dive analysis of your current capabilities, identifying opportunities, and developing a customized AI roadmap aligned with business objectives.
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-2xl font-bold">2</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Build & Deploy</h3>
-                    <p class="text-gray-600">
-                        Rapid prototyping and deployment of AI solutions with seamless integration into existing systems and comprehensive team training.
-                    </p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <span class="text-white text-2xl font-bold">3</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Scale & Optimize</h3>
-                    <p class="text-gray-600">
-                        Continuous improvement, performance monitoring, and scaling successful AI implementations across your entire organization.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 gradient-bg">
-        <div class="max-w-4xl mx-auto text-center px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-            <p class="text-xl text-blue-100 mb-8">
-                Join forward-thinking companies already leveraging AI for competitive advantage
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
-                    Schedule a Consultation
-                </button>
-                <button class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/30">
-                    Download AI Strategy Guide
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">🐧</span>
-                        </div>
-                        <span class="text-xl font-bold">Blue Penguin</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md">
-                        Transforming businesses through intelligent AI solutions. Your trusted partner in the AI revolution.
-                    </p>
-                    <div class="text-gray-400">
-                        <p>hello@hellobluepenguin.com</p>
-                        <p>+1 (555) 123-4567</p>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>AI Strategy</li>
-                        <li>Implementation</li>
-                        <li>Transformation</li>
-                        <li>Training</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>About Us</li>
-                        <li>Insights</li>
-                        <li>Careers</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Blue Penguin AI & Technology Consulting. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('shadow-lg');
-            } else {
-                nav.classList.remove('shadow-lg');
-            }
-        });
-    </script>
-</body>
-</html>
+                    <h3 class="service-title">AI Implementation</h3>
+                    <p class="service-description">End-to-end AI solution deployment with integration, training, and optimization for immediate business impact.</p>
+                    <div class="service-features">
+                        <div class="service-feature
